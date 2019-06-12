@@ -1,0 +1,24 @@
+body {
+    font-family: 'Ubuntu', sans-serif, Helvetica, Arial;
+}
+
+h1 {
+    text-align: center;
+}
+
+.episode-container {
+    display: flex;
+    flex-direction: row;
+    max-width: 1080px;
+    flex-wrap: wrap;
+}
+
+movie-grid {
+    width: 33.33%;
+}
+
+.episode {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}

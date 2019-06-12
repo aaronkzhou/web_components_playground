@@ -11,15 +11,21 @@ async function fetchMovies() {
   const main = document.querySelector('main');
   data._embedded.episodes.forEach(episode => {
     const el = document.createElement('movie-grid');
+    el.classList.add("mystyle")
     el.episode = episode;
     main.appendChild(el);
   });
-  console.log(data);
 }
 
 class MovieGrid extends HTMLElement {
   set episode(episode) {
-    this.innerHTML = `${episode}`;
+    console.log(episode)
+    this.innerHTML = `<div class='episode'>
+      <img src='${episode.image && episode.image.medium}' onerror="this.src='http://static.tvmaze.com/uploads/images/medium_landscape/26/66713.jpg'"/>
+      <span>${episode.name}</span>
+      <span>season ${episode.season} episode ${episode.number}</span>
+      ${episode.summary}
+    </div>`;
   }
 }
 
