@@ -6,6 +6,15 @@ h1 {
     text-align: center;
 }
 
+.name {
+    margin-top: 10px;
+    font-weight: 700;
+}
+
+.desc {
+    font-size: 12px;
+}
+
 .episode-container {
     display: flex;
     flex-direction: row;

@@ -22,9 +22,9 @@ class MovieGrid extends HTMLElement {
     console.log(episode)
     this.innerHTML = `<div class='episode'>
       <img src='${episode.image && episode.image.medium}' onerror="this.src='http://static.tvmaze.com/uploads/images/medium_landscape/26/66713.jpg'"/>
-      <span>${episode.name}</span>
+      <span class='name'>${episode.name}</span>
       <span>season ${episode.season} episode ${episode.number}</span>
-      ${episode.summary}
+      <span class='desc'>${episode.summary}</span>
     </div>`;
   }
 }
