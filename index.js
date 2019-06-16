@@ -11,17 +11,40 @@ async function fetchMovies() {
   const main = document.querySelector('main');
   data._embedded.episodes.forEach(episode => {
     const el = document.createElement('movie-grid');
-    el.classList.add("mystyle")
+    el.classList.add('mystyle');
     el.episode = episode;
     main.appendChild(el);
   });
 }
 
 class MovieGrid extends HTMLElement {
+  constructor() {
+    super();
+    this.root = this.attachShadow({ mode: 'open' });
+  }
+
   set episode(episode) {
-    console.log(episode)
-    this.innerHTML = `<div class='episode'>
-      <img src='${episode.image && episode.image.medium}' onerror="this.src='http://static.tvmaze.com/uploads/images/medium_landscape/26/66713.jpg'"/>
+    this.root.innerHTML = `
+    <style>
+    .episode {
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .name {
+      margin-top: 10px;
+      font-weight: 700;
+    }
+    
+    .desc {
+        font-size: 12px;
+    }
+    </style>
+    <div class='episode'>
+      <img src='${episode.image &&
+        episode.image
+          .medium}' onerror="this.src='http://static.tvmaze.com/uploads/images/medium_landscape/26/66713.jpg'"/>
       <span class='name'>${episode.name}</span>
       <span>season ${episode.season} episode ${episode.number}</span>
       <span class='desc'>${episode.summary}</span>

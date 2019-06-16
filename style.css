@@ -6,19 +6,9 @@ h1 {
     text-align: center;
 }
 
-.name {
-    margin-top: 10px;
-    font-weight: 700;
-}
-
-.desc {
-    font-size: 12px;
-}
-
 .episode-container {
     display: flex;
     flex-direction: row;
-    max-width: 1080px;
     flex-wrap: wrap;
 }
 
@@ -26,8 +16,18 @@ movie-grid {
     width: 33.33%;
 }
 
-.episode {
+/* .episode {
     padding: 20px;
     display: flex;
     flex-direction: column;
 }
+
+.name {
+    margin-top: 10px;
+    font-weight: 700;
+}
+
+.desc {
+    font-size: 12px;
+} */
+
